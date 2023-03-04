@@ -1,17 +1,27 @@
 package kz.attractor.java.lesson44;
 
 import com.sun.net.httpserver.HttpExchange;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
+import freemarker.template.TemplateExceptionHandler;
+import kz.attractor.java.server.BasicServer;
 import kz.attractor.java.server.ContentType;
 import kz.attractor.java.server.Cookie;
+import kz.attractor.java.server.ResponseCodes;
 import kz.attractor.java.utils.Utils;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.nio.file.Path;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
 
-public class Lesson47Server extends Lesson46Server{
+public class Lesson47Server extends BasicServer {
+    private final static Configuration freemarker = initFreeMarker();
     public Lesson47Server(String host, int port) throws IOException, SQLException {
         super(host, port);
         registerGet("/query", this::handleQueryRequest);
@@ -19,18 +29,62 @@ public class Lesson47Server extends Lesson46Server{
         registerGet("/delete", this::handleDeleteRequest);
         registerGet("/add",this::addGet);
         registerPost("/add",this::addPost);
+        registerGet("/", this::daysHandler);
+    }
+
+    protected void renderTemplate(HttpExchange exchange, String templateFile, Object dataModel) {
+        try {
+            Template temp = freemarker.getTemplate(templateFile);
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            try (OutputStreamWriter writer = new OutputStreamWriter(stream)) {
+                temp.process(dataModel, writer);
+                writer.flush();
+                var data = stream.toByteArray();
+                sendByteData(exchange, ResponseCodes.OK, ContentType.TEXT_HTML, data);
+            }
+        } catch (IOException | TemplateException e) {
+            e.printStackTrace();
+        }
+    }
+    private void daysHandler(HttpExchange exchange) {
+        try {
+            Cookie outCookie = new Cookie<>("", "");
+            outCookie.setMaxAge(1);
+            setCookie(exchange, outCookie);
+            renderTemplate(exchange, "days.html", getDaysDataModel());
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private DaysDataModel getDaysDataModel() {
+        return new DaysDataModel();
+    }
+    private static Configuration initFreeMarker() {
+        try {
+            Configuration cfg = new Configuration(Configuration.VERSION_2_3_29);
+            cfg.setDirectoryForTemplateLoading(new File("data"));
+            cfg.setDefaultEncoding("UTF-8");
+            cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+            cfg.setLogTemplateExceptions(false);
+            cfg.setWrapUncheckedExceptions(true);
+            cfg.setFallbackOnNullLoopVariable(false);
+            return cfg;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     private Day getDay(Map<String, String> cookies, HttpExchange exchange) {
         Day day = new Day(LocalDate.of(1,1,1), new ArrayList<>());
         if (!cookies.isEmpty() && (cookies.get("date") != null)) {
-            for (int i = 0; i < FileService.readUserFile().size(); i++) {
+            for (int i = 0; i < FileService.readDaysFile().size(); i++) {
                 if (cookies.get("date").equals(FileService.readDaysFile().get(i).getDate().toString())) {
                    day = FileService.readDaysFile().get(i);
                     return day;
                 }
             }
         } else   if (!cookies.isEmpty() && (cookies.get(" date") != null)) {
-            for (int i = 0; i < FileService.readUserFile().size(); i++) {
+            for (int i = 0; i < FileService.readDaysFile().size(); i++) {
                 if (cookies.get(" date").equals(FileService.readDaysFile().get(i).getDate().toString())) {
                     day = FileService.readDaysFile().get(i);
                     return day;
@@ -126,20 +180,6 @@ public class Lesson47Server extends Lesson46Server{
        }catch (Exception e){
            e.printStackTrace();
        }
-    }
-    private void handleBookRequest(HttpExchange exchange) {
-        String queryParams = getQueryParams(exchange);
-        String params = Utils.parseUrlEncodedBook(queryParams);
-        params = params.replace("Optional[id=","");
-        params = params.replace("]","");
-        int index = Integer.parseInt(params);
-        Book book = new Book(1, "", "", "", 1, "", "");
-        for (int i = 0; i < FileService.readBookFile().size(); i++){
-            if (FileService.readBookFile().get(i).getId() == index){
-                book = FileService.readBookFile().get(i);
-            }
-        }
-        renderTemplate(exchange, "book.html", new SingleBookDataModel(book));
     }
     protected String getQueryParams(HttpExchange exchange) {
         String query = exchange.getRequestURI().getQuery();

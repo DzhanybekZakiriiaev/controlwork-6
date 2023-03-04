@@ -9,8 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f773420-89a0-45eb-b583-baeec2116a30" name="Default Changelist" comment="added add method, fixes are required">
-      <change beforePath="$PROJECT_DIR$/base/Days.json" beforeDir="false" afterPath="$PROJECT_DIR$/base/Days.json" afterDir="false" />
+    <list default="true" id="1f773420-89a0-45eb-b583-baeec2116a30" name="Default Changelist" comment="fixed couple methods">
+      <change beforePath="$PROJECT_DIR$/base/Books.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Users.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/bookbase.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/accounts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kz/attractor/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/BookDataModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Lesson46Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Lesson47Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Lesson47Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/SampleDataModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/SingleBookDataModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/SingleUserDataModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/UserDataModel.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677929598874</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fixed couple methods">
+      <created>1677929988824</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1677929988824</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,6 +288,7 @@
     <MESSAGE value="added some files" />
     <MESSAGE value="added delete method" />
     <MESSAGE value="added add method, fixes are required" />
-    <option name="LAST_COMMIT_MESSAGE" value="added add method, fixes are required" />
+    <MESSAGE value="fixed couple methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed couple methods" />
   </component>
 </project>

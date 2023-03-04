@@ -1,9 +1,6 @@
 package kz.attractor.java;
 
-import kz.attractor.java.lesson44.Lesson46Server;
 import kz.attractor.java.lesson44.Lesson47Server;
-import kz.attractor.java.lesson44.Server;
-import kz.attractor.java.lesson44.User;
 
 import java.io.IOException;
 import java.sql.SQLException;
