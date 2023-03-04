@@ -9,13 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f773420-89a0-45eb-b583-baeec2116a30" name="Default Changelist" comment="added delete method">
-      <change afterPath="$PROJECT_DIR$/data/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1f773420-89a0-45eb-b583-baeec2116a30" name="Default Changelist" comment="added add method, fixes are required">
       <change beforePath="$PROJECT_DIR$/base/Days.json" beforeDir="false" afterPath="$PROJECT_DIR$/base/Days.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/day.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/day.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Lesson47Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Lesson47Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677926456763</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added add method, fixes are required">
+      <created>1677929598874</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1677929598874</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,6 +265,7 @@
     <MESSAGE value="project is done, fixed problems with id and cookies" />
     <MESSAGE value="added some files" />
     <MESSAGE value="added delete method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added delete method" />
+    <MESSAGE value="added add method, fixes are required" />
+    <option name="LAST_COMMIT_MESSAGE" value="added add method, fixes are required" />
   </component>
 </project>
