@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Dzhanybek",
+    "surname": "Zakiriiaev",
+    "books": [
+      {
+        "id": 4,
+        "name": "UPDATEDNEW",
+        "author": "UPDATEDNEW",
+        "genre": "UPDATEDNEW",
+        "year": 2010,
+        "image": "https://i.kym-cdn.com/photos/images/facebook/001/900/240/583.jpg",
+        "user": ""
+      },
+      {
+        "id": 7,
+        "name": "Nadddda",
+        "author": "Some Chelik",
+        "genre": "Fantasy",
+        "year": 2001,
+        "image": "https://template.canva.com/EADaopxBna4/1/0/251w-ujD6UPGa9hw.jpg",
+        "user": "null null"
+      }
+    ],
+    "password": "abcdefg",
+    "email": "dzhanybek.zakiriiaev@gmail.com",
+    "id": "2c4c344",
+    "history": []
+  },
+  {
+    "name": "a",
+    "surname": "b",
+    "books": [
+      {
+        "id": 7,
+        "name": "Nadddda",
+        "author": "Some Chelik",
+        "genre": "Fantasy",
+        "year": 2001,
+        "image": "https://template.canva.com/EADaopxBna4/1/0/251w-ujD6UPGa9hw.jpg",
+        "user": ""
+      },
+      {
+        "id": 11,
+        "name": "Harry Potter",
+        "author": "Dzhanybek",
+        "genre": "Fantasy",
+        "year": 2010,
+        "image": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+        "user": ""
+      }
+    ],
+    "password": "c",
+    "email": "d@gmail.com",
+    "id": "c407538",
+    "history": [
+      {
+        "id": 4,
+        "name": "UPDATEDNEW",
+        "author": "UPDATEDNEW",
+        "genre": "UPDATEDNEW",
+        "year": 2010,
+        "image": "https://i.kym-cdn.com/photos/images/facebook/001/900/240/583.jpg",
+        "user": ""
+      },
+      {
+        "id": 7,
+        "name": "Nadddda",
+        "author": "Some Chelik",
+        "genre": "Fantasy",
+        "year": 2001,
+        "image": "https://template.canva.com/EADaopxBna4/1/0/251w-ujD6UPGa9hw.jpg",
+        "user": ""
+      },
+      {
+        "id": 11,
+        "name": "Harry Potter",
+        "author": "Dzhanybek",
+        "genre": "Fantasy",
+        "year": 2010,
+        "image": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+        "user": ""
+      },
+      {
+        "id": 11,
+        "name": "Harry Potter",
+        "author": "Dzhanybek",
+        "genre": "Fantasy",
+        "year": 2010,
+        "image": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+        "user": ""
+      }
+    ]
+  },
+  {
+    "name": "normie",
+    "surname": "normie",
+    "books": [],
+    "password": "normie",
+    "email": "normie@gmail.com",
+    "id": "6d7d3479",
+    "history": []
+  }
+]

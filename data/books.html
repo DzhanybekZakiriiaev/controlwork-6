@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg bg-light mb-5">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="http://localhost:9893/books">Books</a>
+                    <a class="nav-link" href="http://localhost:9893/accounts">Users</a>
+                    <a class="nav-link" href="http://localhost:9893/login">Login</a>
+                    <a class="nav-link" href="http://localhost:9893/out">Logout</a>
+                    <a class="nav-link" href="http://localhost:9893/registration">Register</a>
+                    <a class="nav-link" href="http://localhost:9893/user">Profile</a>
+                    <a class="nav-link" href="http://localhost:9893/give">Buy Book</a>
+                    <a class="nav-link" href="http://localhost:9893/take">Return Book</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Year</th>
+    </tr>
+    </thead>
+    <tbody>
+    <#list books as book>
+        <tr>
+            <td><a class="nav-link active" href="http://localhost:9893/book?id=${book.id}">${book.id}</a></td>
+            <td><a class="nav-link active" href="http://localhost:9893/book?id=${book.id}">${book.name}</a></td>
+            <td>${book.author}</td>
+            <td>${book.genre}</td>
+            <td>${book.year}</td>
+        </tr>
+    </#list>
+    </tbody>
+</table>
+</body>
+</html>
