@@ -24,6 +24,11 @@
         "name": "Attend friends wedding",
         "description": "Travel to wedding venue and attend ceremony and reception",
         "type": "OTHER"
+      },
+      {
+        "name": "clean",
+        "description": "With brush",
+        "type": "NORMAL"
       }
     ]
   },

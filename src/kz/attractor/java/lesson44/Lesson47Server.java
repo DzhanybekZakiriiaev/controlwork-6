@@ -1,9 +1,12 @@
 package kz.attractor.java.lesson44;
 
 import com.sun.net.httpserver.HttpExchange;
+import kz.attractor.java.server.ContentType;
+import kz.attractor.java.server.Cookie;
 import kz.attractor.java.utils.Utils;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
@@ -14,6 +17,59 @@ public class Lesson47Server extends Lesson46Server{
         registerGet("/query", this::handleQueryRequest);
         registerGet("/day", this::handleDayRequest);
         registerGet("/delete", this::handleDeleteRequest);
+        registerGet("/add",this::addGet);
+        registerPost("/add",this::addPost);
+    }
+    private Day getDay(Map<String, String> cookies, HttpExchange exchange) {
+        Day day = new Day(LocalDate.of(1,1,1), new ArrayList<>());
+        if (!cookies.isEmpty() && (cookies.get("date") != null)) {
+            for (int i = 0; i < FileService.readUserFile().size(); i++) {
+                if (cookies.get("date").equals(FileService.readDaysFile().get(i).getDate().toString())) {
+                   day = FileService.readDaysFile().get(i);
+                    return day;
+                }
+            }
+        } else   if (!cookies.isEmpty() && (cookies.get(" date") != null)) {
+            for (int i = 0; i < FileService.readUserFile().size(); i++) {
+                if (cookies.get(" date").equals(FileService.readDaysFile().get(i).getDate().toString())) {
+                    day = FileService.readDaysFile().get(i);
+                    return day;
+                }
+            }
+        }
+        return day;
+    }
+    private void addPost(HttpExchange exchange) {
+        try{
+            String getCookie = getCookies(exchange);
+            Map<String,String> cookies = Cookie.parse(getCookie);
+            Day day = getDay(cookies,exchange);
+            String raw = getBody(exchange);
+            List<Optional<String>> parsed = Utils.parseInputEncoded(raw,"&");
+            List<String> stats = new ArrayList<>();
+                for (Optional<String> s : parsed) {
+                    stats.add(s.toString().substring(s.toString().indexOf("=") + 1, s.toString().indexOf("]")));
+                }
+            Task task = new Task(stats.get(0), stats.get(1), Type.valueOf(stats.get(2)));
+            day.getTasks().add(task);
+            List<Day> days = new ArrayList<>();
+            for(int i = 0; i < FileService.readDaysFile().size(); i++){
+                if (FileService.readDaysFile().get(i).getDate().toString().equals(day.getDate().toString())){
+                    days.add(day);
+                }
+                else {
+                    days.add(FileService.readDaysFile().get(i));
+                }
+            }
+            FileService.writeDaysFile(days);
+            redirect303(exchange, "/day?date="+day.getDate().getDayOfMonth());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    private void addGet(HttpExchange exchange) {
+        Path path = makeFilePath("add.html");
+        sendFile(exchange, path, ContentType.TEXT_HTML);
     }
     private void handleDeleteRequest(HttpExchange exchange) {
         try{
@@ -56,6 +112,10 @@ public class Lesson47Server extends Lesson46Server{
            params = params.replace("Optional[date=","");
            params = params.replace("]","");
            int index = Integer.parseInt(params);
+           Cookie sessionCookie = Cookie.make("date",(LocalDate.of(2022,10,index)).toString());
+           sessionCookie.setMaxAge(86400);
+           sessionCookie.setHttpOnly(true);
+           exchange.getResponseHeaders().add("Set-Cookie", sessionCookie.toString());
            Day day = new Day(LocalDate.of(2022,10,index), new ArrayList<>());
            for (int i = 0; i < FileService.readDaysFile().size(); i++){
                if (FileService.readDaysFile().get(i).getDate().getDayOfMonth() == index){

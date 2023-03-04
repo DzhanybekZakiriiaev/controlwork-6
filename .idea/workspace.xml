@@ -9,17 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f773420-89a0-45eb-b583-baeec2116a30" name="Default Changelist" comment="added some files">
-      <change afterPath="$PROJECT_DIR$/base/Days.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/day.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/days.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Day.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/DaysDataModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/SingleDayDataModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Type.java" afterDir="false" />
+    <list default="true" id="1f773420-89a0-45eb-b583-baeec2116a30" name="Default Changelist" comment="added delete method">
+      <change afterPath="$PROJECT_DIR$/data/add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/Days.json" beforeDir="false" afterPath="$PROJECT_DIR$/base/Days.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/day.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/day.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Lesson47Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Lesson47Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kz/attractor/java/lesson44/Server.java" afterDir="false" />
     </list>
@@ -231,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677915547472</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added delete method">
+      <created>1677926456763</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677926456763</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,6 +262,7 @@
     <MESSAGE value="fixed some problems with logout" />
     <MESSAGE value="project is done, fixed problems with id and cookies" />
     <MESSAGE value="added some files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some files" />
+    <MESSAGE value="added delete method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added delete method" />
   </component>
 </project>

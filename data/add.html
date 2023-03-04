@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+  <form action="/add" method="post">
+    <fieldset>
+      <div class="form-element">
+        <label for="name">name</label>
+        <input type="text" name="name" id="name" placeholder="enter name">
+      </div>
+      <div class="form-element">
+        <label for="description">description</label>
+        <input type="text" name="description" id="description" placeholder="enter description">
+      </div>
+      <div class="form-element">
+        <select name="type">
+          <option name="type" value="NORMAL">NORMAL</option>
+          <option name="type" value="WORK">WORK</option>
+          <option name="type" value="SHOPPING">SHOPPING</option>
+          <option name="type" value="URGENT">URGENT</option>
+          <option name="type" value="OTHER">OTHER</option>
+      </select>
+      </div>
+      <div class="form-element">
+        <button class="register-button" type="submit">ADD!</button>
+      </div>
+    </fieldset>
+  </form>
+</main>
+</body>
+</html>

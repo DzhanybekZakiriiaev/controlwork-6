@@ -17,14 +17,12 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.file.Path;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 public class Server extends BasicServer {
     private final static Configuration freemarker = initFreeMarker();
-
-    private final static String name = "id";
-
     public Server(String host, int port) throws IOException {
         super(host, port);
         registerGet("/", this::daysHandler);
@@ -41,8 +39,6 @@ public class Server extends BasicServer {
 //        registerPost("/out",this::outPost);
 //        registerGet("/registration",this::registrationGet);
 //        registerPost("/registration",this::registrationPost);
-//        registerGet("/give",this::giveGet);
-//        registerPost("/give",this::givePost);
 //        registerGet("/take",this::takeGet);
 //        registerPost("/take",this::takePost);
     }
@@ -62,6 +58,9 @@ public class Server extends BasicServer {
     }
     private void daysHandler(HttpExchange exchange) {
        try {
+           Cookie outCookie = new Cookie<>("", "");
+            outCookie.setMaxAge(1);
+            setCookie(exchange, outCookie);
            renderTemplate(exchange, "days.html", getDaysDataModel());
        } catch (Exception e){
            e.printStackTrace();
