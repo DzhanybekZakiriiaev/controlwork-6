@@ -12,6 +12,31 @@ import java.util.List;
 
 public class FileService {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    public static List<Day> readDaysFile() {
+        String json = "";
+        List<Day> days = new ArrayList<>();
+        try{
+            Path path = Paths.get("base/Days.json");
+            json = Files.readString(path);
+            for(int i = 0; i < GSON.fromJson(json, Day[].class).length;i++){
+                days.add(GSON.fromJson(json, Day[].class)[i]);
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return days;
+    }
+    public static void  writeDaysFile(List<Day> days){
+        String json = GSON.toJson(days);
+        try{
+            Path path = Paths.get("base/Days.json");
+            Files.write(path, json.getBytes());
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
     public static List<Book> readBookFile() {
         String json = "";

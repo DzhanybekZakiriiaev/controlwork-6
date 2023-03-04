@@ -1,0 +1,63 @@
+[
+  {
+    "date": {
+      "year": 2022,
+      "month": 10,
+      "day": 1
+    },
+    "tasks": [
+      {
+        "name": "Clean the house",
+        "description": "Vacuum the floors and dust the furniture",
+        "type": "NORMAL"
+      }
+    ]
+  },
+  {
+    "date": {
+      "year": 2022,
+      "month": 10,
+      "day": 15
+    },
+    "tasks": [
+      {
+        "name": "Attend friends wedding",
+        "description": "Travel to wedding venue and attend ceremony and reception",
+        "type": "OTHER"
+      }
+    ]
+  },
+  {
+    "date": {
+      "year": 2022,
+      "month": 10,
+      "day": 20
+    },
+    "tasks": [
+      {
+        "name": "Finish work project",
+        "description": "Complete final report and submit to manager",
+        "type": "WORK"
+      },
+      {
+        "name": "Dentist appointment",
+        "description": "Get teeth cleaned and cavity filled",
+        "type": "URGENT"
+      }
+    ]
+  },
+  {
+    "date": {
+      "year": 2022,
+      "month": 10,
+      "day": 31
+    },
+    "tasks": [
+      {
+        "name": "Halloween party",
+        "description": "Host costume party and hand out candy to trick-or-treaters",
+        "type": "OTHER"
+      }
+    ]
+  }
+]
